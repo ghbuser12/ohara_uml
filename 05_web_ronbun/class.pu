@@ -1,5 +1,5 @@
 @startuml
-skinparam ClassAttributeIconSize
+skinparam ClassAttributeIconSize 0
 class 学生 {
  -学生ID
  -名前
