@@ -13,23 +13,20 @@ LC -> Logout: display()
 activate Logout
 Logout --> LC: displayed
 deactivate Logout
-deactivate LC
-
+LC -> LC: waitForUserConfirm()
+note right of LC
+ ユーザーがログアウトを選択するまで待つ
+end note
 U -> Logout: 選択("ログアウト")
 activate Logout
 Logout -> LC: confirmLogout()
-deactivate Logout
-
 activate LC
 LC -> Login: displayLogin()
 activate Login
 Login --> LC: displayed
 deactivate Login
-
 LC --> Logout: logoutCompleted
 deactivate LC
-
-activate Logout
 Logout --> U: 表示: ログアウト完了
 deactivate Logout
 
