@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Fr-UfEo_7UpLeRoa98SQ" name="ページ1">
-        <mxGraphModel dx="390" dy="436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="223" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -43,31 +43,22 @@
                         <mxPoint x="334" y="642" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="訪問者情報変更" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="274" y="840" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="18" value="変更" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="17" edge="1">
+                <mxCell id="18" value="変更" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.51;entryY=0.143;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="31" edge="1">
                     <mxGeometry width="80" relative="1" as="geometry">
                         <mxPoint x="334" y="702" as="sourcePoint"/>
-                        <mxPoint x="270" y="480" as="targetPoint"/>
+                        <mxPoint x="334" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="19" value="訪問者情報参照" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="60" y="839" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="20" value="参照" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.818;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" target="19" edge="1">
+                <mxCell id="20" value="参照" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.625;entryY=0.105;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" target="29" edge="1">
                     <mxGeometry width="80" relative="1" as="geometry">
                         <mxPoint x="304" y="702" as="sourcePoint"/>
-                        <mxPoint x="280" y="490" as="targetPoint"/>
+                        <mxPoint x="158.15999999999997" y="839.9000000000001" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="訪問者情報削除" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="460" y="840" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" value="削除" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" target="21" edge="1">
+                <mxCell id="22" value="削除" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.343;entryY=0.154;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="32" edge="1">
                     <mxGeometry width="80" relative="1" as="geometry">
                         <mxPoint x="364" y="702" as="sourcePoint"/>
-                        <mxPoint x="510" y="800" as="targetPoint"/>
+                        <mxPoint x="490" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="23" value="メニュー画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -84,6 +75,15 @@
                 </mxCell>
                 <mxCell id="27" value="マイページ画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="274" y="640" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="訪問者情報参照" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="830" width="90" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="訪問者情報変更" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="288" y="830" width="90" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="訪問者情報削除" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="830" width="90" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
