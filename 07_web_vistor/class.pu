@@ -1,16 +1,18 @@
-@startuml .
-skinparam classAttributeIconSize 0
-class RoboDog {
- -ユーザーID
+@startuml
+skinparam ClassAttributeIconSize 0
+class 訪問者 {
+ -訪問者ID
  -パスワード
- -名前
+ -氏名
  -学校名
- -所属名
+ -所属
  -メールアドレス
  -電話番号
  -年齢
- +訪問者情報を登録する()
- +訪問者情報を参照する()
- +訪問情報を変更・削除する()
+ +訪問者登録()
+ +訪問者情報参照()
+ +訪問者情報更新()
+ +訪問者情報削除()
 }
+
 @enduml
