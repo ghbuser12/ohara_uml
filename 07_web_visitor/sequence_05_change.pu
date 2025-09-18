@@ -1,0 +1,45 @@
+@startuml 訪問者情報変更シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor 訪問者 as A
+boundary 情報変更画面 as B1
+boundary 確認画面 as B2
+boundary 完了画面 as B3
+control 入力チェック as C1
+control 情報更新 as C2
+entity 訪問者データベース as E
+
+A -> B1: 「情報変更」メニューを選択()
+activate B1
+
+A -> B1: 新しい情報を入力()
+
+B1 -> C1: 入力内容をチェック()
+activate C1
+C1 --> B1: チェック結果
+deactivate C1
+
+B1 -> B2: 確認画面を表示()
+deactivate B1
+activate B2
+
+A -> B2: 確認して「登録」ボタンを押す()
+
+B2 -> C2: 情報を更新()
+activate C2
+C2 -> E: データを保存()
+activate E
+E --> C2: 保存完了()
+deactivate E
+
+C2 -> B3: 完了画面を表示()
+deactivate C2
+deactivate B2
+activate B3
+
+A -> B3: 完了を確認()
+
+@enduml
