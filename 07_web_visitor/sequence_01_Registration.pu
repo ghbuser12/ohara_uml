@@ -1,0 +1,35 @@
+@startuml Web訪問者システム-訪問者登録シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor 訪問者 as A
+boundary Webページ as B1
+boundary 登録画面 as B2
+boundary 登録結果画面 as B3
+control 登録処理 as C1
+entity データベース as E
+
+A -> B1: 「新規登録」を選択()
+activate B1
+
+B1 -> B2: 登録画面を表示()
+deactivate B1
+activate B2
+
+A -> B2: 登録情報を入力(ユーザID, パスワード, 名前, 学校名, 所属名, メール, 電話番号, 年齢)
+
+B2 -> C1: 入力内容を送信()
+activate C1
+C1 -> E: 登録処理()
+activate E
+E --> C1: 登録完了
+deactivate E
+
+C1 -> B3: 登録結果を表示()
+deactivate C1
+deactivate B2
+activate B3
+
+@enduml

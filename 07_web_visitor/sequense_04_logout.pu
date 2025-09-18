@@ -1,0 +1,36 @@
+@startuml logout_sequence
+actor User as U
+boundary MenuScreen as Menu
+boundary LogoutScreen as Logout
+boundary LoginScreen as Login
+control LogoutController as LC
+
+U -> Menu: 選択("ログアウト")
+activate Menu
+Menu -> LC: showLogoutScreen()
+activate LC
+LC -> Logout: display()
+activate Logout
+Logout --> LC: displayed
+deactivate Logout
+deactivate LC
+
+U -> Logout: 選択("ログアウト")
+activate Logout
+Logout -> LC: confirmLogout()
+deactivate Logout
+
+activate LC
+LC -> Login: displayLogin()
+activate Login
+Login --> LC: displayed
+deactivate Login
+
+LC --> Logout: logoutCompleted
+deactivate LC
+
+activate Logout
+Logout --> U: 表示: ログアウト完了
+deactivate Logout
+
+@enduml
