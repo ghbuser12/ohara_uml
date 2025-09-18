@@ -1,0 +1,38 @@
+@startuml Web訪問者情報削除シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor 訪問者 as A
+boundary マイページ画面 as B1
+boundary 削除確認画面 as B2
+boundary 削除完了画面 as B3
+control 削除処理 as C1
+entity 訪問者データ as E
+
+A -> B1: 「削除」ボタン選択
+activate B1
+B1 -> B2: 削除確認画面表示
+deactivate B1
+activate B2
+
+A -> B2: 削除実行
+B2 -> C1: 削除要求
+activate C1
+C1 -> E: 訪問者情報削除
+activate E
+E --> C1: 削除完了
+deactivate E
+
+C1 -> B3: 削除完了画面表示
+deactivate C1
+activate B3
+B3 -> A: 削除完了画面表示
+deactivate B3
+
+alt 削除キャンセル
+    A -> B2: キャンセル選択
+    B2 -> B1: マイページ画面に戻る
+end
+@enduml
