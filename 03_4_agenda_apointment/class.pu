@@ -1,6 +1,19 @@
 @startuml .
 skinparam classAttributeIconSize 0
-class agennda {
-
+class agenda {
+-ユーザID
+-名前
+-会議室情報
+-会議室名
+-座席数
+-予約番号
+-AV機器の有無
+-システム機能
++ログインする()
++ログアウトする()
++指定の日付の予約済会議室の表示()
++新しい予約の作成()
++予約の変更()
++予約の取り消し()
 }
 @enduml
