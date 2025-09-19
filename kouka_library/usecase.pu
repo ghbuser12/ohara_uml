@@ -4,7 +4,6 @@ skinparam usecase {
   FontSize 12
 }
 
-actor 図書館利用者 as User
 actor 事務職員 as staff
 
 rectangle "LibrarySystem" {
@@ -14,8 +13,8 @@ rectangle "LibrarySystem" {
   usecase UC04 as "貸出履歴を閲覧する"
 }
 
-User -- UC01
-User -- UC02
+staff -- UC01
+staff -- UC02
 
 staff -- UC03
 staff -- UC04
