@@ -1,6 +1,6 @@
 @startuml .
 skinparam classAttributeIconSize 0
-class agenda {
+class libraly {
 -ユーザID
 -名前
 -予約番号

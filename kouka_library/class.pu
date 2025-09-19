@@ -1,6 +1,6 @@
 @startuml .
 skinparam classAttributeIconSize 0
-class RoboDog {
+class library {
  -ユーザーID
  -パスワード
  -名前
