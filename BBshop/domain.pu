@@ -1,40 +1,77 @@
-@startuml BBShop_ConceptModel
-
+@startuml BBShop_ドメインモデル図
 skinparam componentStyle rectangle
 skinparam rectangle {
-    BackgroundColor #FFF2CC
-    BorderColor #D6B656
+  BackgroundColor #FFF2CC
+  BorderColor #D6B656
 }
 left to right direction
 
-[顧客]
-[注文]
-[注文明細]
-[商品]
-[決済情報]
-[配送情報]
-[返品情報]
+' エンティティ
+rectangle ユーザ {
+  ユーザID
+  名前
+  住所
+  電話番号
+  メールアドレス
+}
 
-[注文] o-- [顧客]
-[注文] o-- [注文明細]
-[注文] o-- [決済情報]
-[注文] o-- [配送情報]
-[注文] o-- [返品情報]
+rectangle 商品 {
+  商品ID
+  タイトル
+  価格
+  在庫数
+}
 
-[注文明細] o-- [商品]
+rectangle 注文 {
+  注文ID
+  数量
+  注文日
+  配送先
+  注文状態（受付／決済中／発送済／キャンセル）
+}
 
-[注文] o-- [注文ステータス]
-[決済情報] o-- [決済ステータス]
-[配送情報] o-- [配送ステータス]
-[返品情報] o-- [返品ステータス]
+rectangle 決済 {
+  決済ID
+  決済方法（クレジットカード）
+  金額
+  決済結果
+}
 
-[決済情報] o-- [返金金額]
+rectangle 発送 {
+  発送ID
+  配送先
+  発送日
+  発送状況
+}
 
-[返品情報] o-- [返送理由]
+rectangle 返品 {
+  返品ID
+  返品理由
+  返品受付日
+  返金状態
+}
 
-[注文明細] o-- [数量]
-[注文明細] o-- [単価]
+rectangle 管理者 {
+  管理者ID
+  名前
+  権限
+}
 
-[商品] o-- [在庫数]
+' 関連
+ユーザ -- 注文
+ユーザ -- 返品
+ユーザ -- 決済
+
+注文 -- 商品
+注文 -- 決済
+注文 -- 発送
+注文 -- 返品
+
+返品 -- 決済 : 返金処理
+
+管理者 -- 商品
+管理者 -- 注文
+管理者 -- 発送
+管理者 -- 返品
 
 @enduml
