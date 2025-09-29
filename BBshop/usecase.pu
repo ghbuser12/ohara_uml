@@ -7,7 +7,7 @@ skinparam usecase {
 actor ユーザ as User
 actor 管理者 as Admin
 
-rectangle "ECサイト" {
+rectangle "ユーザー機能" {
   usecase UC01 as "ログイン"
   usecase UC02 as "ログアウト"
   usecase UC03 as "商品を検索する"
@@ -18,7 +18,10 @@ rectangle "ECサイト" {
   usecase UC08 as "注文をキャンセルする"
   usecase UC09 as "返品を依頼する"
   usecase UC10 as "決済する"
-  usecase UC11 as "商品・在庫を管理する" 
+}
+
+rectangle "管理者機能" {
+  usecase UC11 as "商品・在庫を管理する"
   usecase UC12 as "注文・発送を管理する"
 }
 
