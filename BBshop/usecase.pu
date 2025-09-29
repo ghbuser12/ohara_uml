@@ -1,0 +1,44 @@
+@startuml usecase_ec
+left to right direction
+skinparam usecase {
+  FontSize 12
+}
+
+actor ユーザ as User
+actor 管理者 as Admin
+
+rectangle "ECサイト" {
+  usecase UC01 as "ログイン"
+  usecase UC02 as "ログアウト"
+  usecase UC03 as "商品を検索する"
+  usecase UC04 as "商品を閲覧する"
+  usecase UC05 as "カートに追加する"
+  usecase UC06 as "カートを閲覧する"
+  usecase UC07 as "注文する（チェックアウト）"
+  usecase UC08 as "注文をキャンセルする"
+  usecase UC09 as "返品を依頼する"
+  usecase UC10 as "決済する"
+  usecase UC11 as "商品・在庫を管理する" 
+  usecase UC12 as "注文・発送を管理する"
+}
+
+User -- UC01
+User -- UC02
+User -- UC03
+User -- UC04
+User -- UC05
+User -- UC06
+User -- UC07
+User -- UC08
+User -- UC09
+User -- UC10
+
+Admin -- UC11
+Admin -- UC12
+Admin -- UC08
+Admin -- UC09
+
+UC07 .> UC10 : includes
+UC05 .> UC06 : includes
+
+@enduml
