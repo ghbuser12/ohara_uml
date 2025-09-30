@@ -1,0 +1,36 @@
+@startuml Web訪問者システム-商品の閲覧シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor ユーザー as A
+boundary Webページ as B1
+boundary 商品一覧画面 as B2
+boundary 商品詳細画面 as B3
+control 商品閲覧処理 as C1
+entity 商品データベース as E
+
+' 基本フロー
+A -> B2: 商品を選択()
+activate B2
+B2 -> C1: 選択商品IDを送信()
+activate C1
+C1 -> E: 商品情報を取得(商品ID)
+activate E
+E --> C1: 商品情報(商品名, 著者, 価格, 在庫状況)
+deactivate E
+
+alt 商品情報あり
+  C1 -> B3: 商品詳細画面を表示()
+  deactivate C1
+  deactivate B2
+  activate B3
+  B3 -> A: 商品名・著者・価格・在庫状況を表示
+  A -> B3: 「カートに追加」や「注文」操作に進む
+else 商品情報なし
+  C1 -> B2: 「商品情報を取得できません」を表示
+  deactivate C1
+end
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml Web訪問者システム-商品の検索シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor ユーザー as A
+boundary Webページ as B1
+boundary 検索画面 as B2
+boundary 検索結果画面 as B3
+control 検索処理 as C1
+entity 商品データベース as E
+
+' 基本フロー
+A -> B1: 「商品検索」を選択()
+activate B1
+
+B1 -> B2: 検索画面を表示()
+deactivate B1
+activate B2
+
+A -> B2: キーワードを入力 or カテゴリを選択
+B2 -> C1: 入力条件を送信()
+activate C1
+C1 -> E: 商品検索(条件)
+activate E
+E --> C1: 検索結果
+deactivate E
+
+alt 検索結果あり
+  C1 -> B3: 検索結果一覧を表示()
+  deactivate C1
+  deactivate B2
+  activate B3
+  A -> B3: 商品を選択
+  B3 -> B1: 商品詳細画面へ遷移()
+else 検索結果なし
+  C1 -> B2: 「該当する商品はありません」を表示
+  deactivate C1
+end
+
+@enduml
