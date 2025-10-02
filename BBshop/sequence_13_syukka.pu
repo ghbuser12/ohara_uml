@@ -1,0 +1,43 @@
+@startuml 出荷準備シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor 管理者 as Admin
+boundary 出荷依頼画面 as B1
+control 出荷処理 as C1
+entity 出版社 as Pub
+entity 発送業者 as Ship
+entity データベース as DB
+
+' 基本フロー
+Admin -> B1: 出荷準備を開始()
+activate B1
+
+B1 -> C1: 出荷依頼を実行()
+activate C1
+
+C1 -> Pub: 出荷依頼()
+activate Pub
+Pub --> C1: 本を納品
+deactivate Pub
+
+C1 -> Admin: 出版社から本を受け取る()
+deactivate B1
+
+Admin -> C1: 受け取った本を確認()
+C1 -> DB: 注文内容と照合()
+activate DB
+DB --> C1: 照合結果(一致)
+deactivate DB
+
+Admin -> Ship: 発送業者へ受け渡し()
+activate Ship
+Ship --> Admin: 受領
+deactivate Ship
+
+C1 -> DB: 発送状況を「発送中」に更新()
+deactivate C1
+
+@enduml
