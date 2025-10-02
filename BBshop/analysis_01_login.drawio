@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram id="xhMNZ4ig9EPuWRYsUMcA" name="ページ1">
+    <mxGraphModel dx="786" dy="498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-2" value="システム&lt;div&gt;メニュー&lt;/div&gt;" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="110" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-3" value="ログイン情報入力画面を表示" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="110" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.017;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="6DsNu2HF0EdhJwWt3HY2-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="290" as="sourcePoint" />
+            <mxPoint x="440" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-5" value="ログインを&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;クリック&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-7" value="BBshop" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.987;exitY=0.504;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.513;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6DsNu2HF0EdhJwWt3HY2-2" target="6DsNu2HF0EdhJwWt3HY2-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.971;exitY=0.763;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6DsNu2HF0EdhJwWt3HY2-3" target="6DsNu2HF0EdhJwWt3HY2-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-10" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="2" target="6DsNu2HF0EdhJwWt3HY2-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="210" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-11" value="ログイン画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="230" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-12" value="ログイン情報の&lt;div&gt;入力&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="90" y="250" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-13" value="認証処理" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="379" y="270" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.007;exitY=0.554;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.033;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6DsNu2HF0EdhJwWt3HY2-11" target="6DsNu2HF0EdhJwWt3HY2-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.058;exitY=0.746;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.957;entryY=0.396;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6DsNu2HF0EdhJwWt3HY2-7" target="6DsNu2HF0EdhJwWt3HY2-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-16" value="ログイン結果を表示" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="350" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6DsNu2HF0EdhJwWt3HY2-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.119;exitY=0.896;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6DsNu2HF0EdhJwWt3HY2-13" target="6DsNu2HF0EdhJwWt3HY2-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
