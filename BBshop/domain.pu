@@ -54,7 +54,6 @@ skinparam componentStyle rectangle
 [カート] o-- [カートID]
 [カート] o-- [作成日]
 [カート] o-- [最終更新日]
-[カート] -- [ユーザ]
 
 
 ' 関連（わかりやすさのため明示）
