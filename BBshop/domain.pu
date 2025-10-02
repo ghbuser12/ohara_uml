@@ -59,6 +59,5 @@ skinparam componentStyle rectangle
 
 ' 関連（わかりやすさのため明示）
 [ユーザ] -- [カート]
-[カート] -- [カート項目]
-[カート項目] -- [商品]
+[カート] -- [商品]
 @enduml
