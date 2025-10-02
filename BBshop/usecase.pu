@@ -23,6 +23,7 @@ rectangle "ユーザー機能" {
 rectangle "管理者機能" {
   usecase UC11 as "商品・在庫を管理する"
   usecase UC12 as "注文・発送を管理する"
+  usecase UC13 as "出荷準備をする"
 }
 
 User -- UC01
@@ -40,6 +41,7 @@ Admin -- UC11
 Admin -- UC12
 Admin -- UC08
 Admin -- UC09
+Admin -- UC13
 
 UC07 .> UC10 : includes
 UC05 .> UC06 : includes
