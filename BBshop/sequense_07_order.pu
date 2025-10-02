@@ -1,0 +1,55 @@
+@startuml sequence_07_order
+
+title 注文処理 (sequence_07_order)
+
+' アクターと参加者（PlantUMLの予約語を避けるため、BBショップをBBshop_Systemと表記）
+actor 顧客
+participant BBshop_System as "BBショップ\n(システム)"
+participant 在庫管理
+participant 決済サービス
+
+autonumber
+
+' 事前条件: 顧客が商品をカートに入れ、ログイン済みである。
+' 基本フロー
+activate 顧客
+顧客 -> BBshop_System: カートの内容を確認し、レジ手続きに進む
+activate BBshop_System
+
+BBshop_System -> 顧客: 配送先（顧客情報に基づく）を表示
+deactivate BBshop_System
+
+顧客 -> BBshop_System: 支払い方法（クレジットカードなど）を選択/入力
+activate BBshop_System
+
+BBshop_System -> 在庫管理: 在庫の確認を依頼
+activate 在庫管理
+在庫管理 --> BBshop_System: 在庫確認結果を応答
+deactivate 在庫管理
+
+alt 在庫あり (基本フロー)
+    BBshop_System -> 決済サービス: 支払いを行う (UC-4を**参照**)
+    activate 決済サービス
+    note over 決済サービス, 顧客
+        <<include>> 支払いを行う (UC-4)の
+        詳細処理を別途定義
+    end note
+    決済サービス --> BBshop_System: 支払い完了通知
+    deactivate 決済サービス
+
+    BBshop_System -> BBshop_System: 注文を確定し、注文IDを発行する
+    note right: 注文オブジェクトを\n「注文受付」ステータスで作成
+    BBshop_System -> 顧客: 注文完了メールを送信
+
+else A4: 在庫不足 (代替フロー)
+    BBshop_System -> 顧客: 在庫不足を通知し、注文を確定しない
+    deactivate BBshop_System
+    顧客 -> 顧客: カートの内容を修正する
+    ' 顧客が再度プロセスを開始することを想定し、ここではシーケンスを終了
+    
+end
+
+deactivate 顧客
+deactivate BBshop_System
+
+@enduml
