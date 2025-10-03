@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+
+' アクター
+actor User as "ユーザー"
+
+' UI（Boundary）
+boundary ProductPage as "商品ページ"
+boundary AddCartComplete as "カート追加完了画面"
+boundary ProductListPage as "商品一覧ページ"
+
+' コントローラ（Control）
+control CartController as "カートController"
+
+' エンティティ（Entity）
+entity Product as "商品"
+entity Cart as "カート"
+
+' === 基本フロー ===
+User --> ProductPage : 「カートに追加」を選択
+ProductPage --> CartController : カート追加要求
+CartController --> Product : 商品情報を取得
+CartController --> Product : 在庫確認
+CartController --> Cart : 商品を追加
+CartController --> AddCartComplete : カート追加完了画面を表示
+User --> AddCartComplete : OKボタンを押す
+AddCartComplete --> ProductListPage : 商品一覧ページを表示
+
+' === 代替フロー：在庫なし ===
+CartController --> AddCartComplete : 「在庫がありません」メッセージを表示
+AddCartComplete --> ProductListPage : 商品一覧ページを表示
+
+@enduml
