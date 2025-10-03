@@ -9,7 +9,8 @@ boundary productPage.jsp as B1
 boundary cartComplete.jsp as B2
 boundary productList.jsp as B3
 control カート処理 as C1
-entity データベース as E
+entity productDatabase as E1
+entity cart as E2
 
 ' 基本フロー
 U -> B1: 「カートに追加」を選択()
@@ -17,10 +18,10 @@ activate B1
 
 B1 -> C1: 商品情報リクエスト()
 activate C1
-C1 -> E: 在庫確認 & 商品情報取得()
-activate E
-E --> C1: 在庫情報 & 商品情報
-deactivate E
+C1 -> E1: 在庫確認 & 商品情報取得()
+activate E1
+E1 --> C1: 在庫情報 & 商品情報
+deactivate E1
 
 alt 在庫なし
   C1 -> B1: 「商品の在庫がありません」メッセージを表示()
@@ -30,6 +31,8 @@ alt 在庫なし
   B1 -> B3: 商品一覧ページを表示()
   activate B3
 else 在庫あり
+  C1 -> E2: カートに商品を追加()
+  C1 -> E1: 追加した商品を在庫から削除
   C1 -> B2: カート追加完了画面を表示()
   deactivate C1
   deactivate B1
