@@ -83,10 +83,10 @@
                     <mxGeometry x="615" y="75" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-wrap-mode: nowrap;&quot;&gt;注文履歴&lt;/span&gt;" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="270" y="150" width="70" height="80" as="geometry"/>
+                    <mxGeometry x="210" y="148" width="70" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="150" y="200" width="100" height="80" as="geometry"/>
+                    <mxGeometry x="170" y="325" width="100" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.58;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="4" target="39" edge="1">
                     <mxGeometry width="80" relative="1" as="geometry">
