@@ -5,9 +5,9 @@ skinparam controlBackgroundColor  #F8CECC
 skinparam entityBackgroundColor   #DAE8FC
 
 actor ユーザー as U
-boundary 商品ページ as B1
-boundary カート追加完了画面 as B2
-boundary 商品一覧ページ as B3
+boundary productPage.jsp as B1
+boundary cartComplete.jsp as B2
+boundary productList.jsp as B3
 control カート処理 as C1
 entity データベース as E
 
