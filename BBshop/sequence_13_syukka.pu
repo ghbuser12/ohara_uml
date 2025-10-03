@@ -5,11 +5,12 @@ skinparam controlBackgroundColor  #F8CECC
 skinparam entityBackgroundColor   #DAE8FC
 
 actor 管理者 as Admin
-boundary 出荷依頼画面 as B1
+boundary 出荷依頼画面.jsp as B1
 control 出荷処理 as C1
-entity 出版社 as Pub
-entity 発送業者 as Ship
+entity PublisherDAO.java as Pub
+entity ShippingCompanyDAO.java as Ship
 entity データベース as DB
+
 
 ' 基本フロー
 Admin -> B1: 出荷準備を開始()
