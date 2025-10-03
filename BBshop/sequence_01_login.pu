@@ -4,7 +4,7 @@ skinparam boundaryBackgroundColor #D5E8D4
 skinparam controlBackgroundColor  #F8CECC
 skinparam entityBackgroundColor   #DAE8FC
 
-actor 顧客 as A
+actor ユーザー as A
 boundary Webページ as B1
 boundary ログイン画面 as B2
 boundary ログイン完了画面 as B3
