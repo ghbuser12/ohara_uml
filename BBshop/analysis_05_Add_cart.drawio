@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram id="z1uy2Iq04QHZ0uqAV7ot" name="ページ1">
+    <mxGraphModel dx="786" dy="498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uzD4i4Cy81bu130jzfPa-2" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="120" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-3" value="商品ページ" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="70" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.053;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-2" target="uzD4i4Cy81bu130jzfPa-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-6" value="カート追加を&lt;div&gt;選択&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-7" value="&lt;div&gt;カート追加&lt;/div&gt;&lt;div&gt;完了画面&lt;/div&gt;" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="180" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-8" value="カート追加処理" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="130" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-9" value="BBshop" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-11" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.973;exitY=0.638;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.454;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-3" target="uzD4i4Cy81bu130jzfPa-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-12" value="カート追加を要求" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-15" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.067;exitY=0.779;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.96;entryY=0.621;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-8" target="uzD4i4Cy81bu130jzfPa-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-16" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=-0.013;entryY=0.463;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-2" target="uzD4i4Cy81bu130jzfPa-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-17" value="OKを押す" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="190" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-18" value="商品一覧&lt;div&gt;ページ&lt;/div&gt;" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="300" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-19" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.34;exitY=0.913;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.72;entryY=0.079;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-7" target="uzD4i4Cy81bu130jzfPa-18">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-20" value="商品情報取得" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="130" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uzD4i4Cy81bu130jzfPa-21" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;exitX=1.019;exitY=0.504;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.017;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uzD4i4Cy81bu130jzfPa-8" target="uzD4i4Cy81bu130jzfPa-9">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="260" as="sourcePoint" />
+            <mxPoint x="420" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
