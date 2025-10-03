@@ -1,0 +1,43 @@
+@startuml カート追加ロバストネス図
+left to right direction
+skinparam rectangle {
+  BackgroundColor<<boundary>> #D5E8D4
+  BackgroundColor<<control>>  #F8CECC
+  BackgroundColor<<entity>>   #DAE8FC
+  BorderColor Black
+}
+
+actor ユーザー as User
+
+rectangle "ECサイト" {
+  
+  ' Boundary（UI）
+  rectangle "商品ページ" <<boundary>> as B1
+  rectangle "カート追加完了画面" <<boundary>> as B2
+  rectangle "商品一覧ページ" <<boundary>> as B3
+  
+  ' Control（処理）
+  rectangle "カート追加処理" <<control>> as C1
+  
+  ' Entity（データ）
+  rectangle "商品" <<entity>> as E1
+  rectangle "カート" <<entity>> as E2
+}
+
+' 基本フロー
+User --> B1 : 「カートに追加」を選択
+B1 --> C1 : カート追加要求
+C1 --> E1 : 商品情報を取得
+C1 --> E1 : 在庫確認
+C1 --> E2 : 商品をカートに追加
+
+alt 在庫あり
+  C1 --> B2 : カート追加完了画面を表示
+  User --> B2 : OKボタンを押す
+  B2 --> B3 : 商品一覧ページを表示
+else 在庫なし
+  C1 --> B1 : 「在庫がありません」メッセージを表示
+  B1 --> B3 : 商品一覧ページを表示
+end
+
+@enduml

@@ -23,8 +23,19 @@ rectangle "ユーザー機能" {
 rectangle "管理者機能" {
   usecase UC11 as "商品・在庫を管理する"
   usecase UC12 as "注文・発送を管理する"
+  usecase UC13 as "出荷準備をする"
+  usecase UC14 as "ユーザーを管理する"
+  usecase UC15 as "売上を分析する"
+  usecase UC16 as "返品情報の確認をする"
+  usecase UC17 as "システム設定を管理する"
+  usecase UC18 as "発送を完了する"
+  usecase UC19 as "発送状況を通知する"
+  usecase UC20 as "返品を受付する"
+  usecase UC21 as "返金を指示する"
+  usecase UC22 as "決済を取り消す"
 }
 
+' --- ユーザーの利用ユースケース ---
 User -- UC01
 User -- UC02
 User -- UC03
@@ -36,12 +47,21 @@ User -- UC08
 User -- UC09
 User -- UC10
 
+' --- 管理者の利用ユースケース ---
+Admin -- UC01
+Admin -- UC02
 Admin -- UC11
 Admin -- UC12
-Admin -- UC08
-Admin -- UC09
+Admin -- UC13
+Admin -- UC14
+Admin -- UC15
+Admin -- UC16
+Admin -- UC17
+Admin -- UC18
+Admin -- UC19
+Admin -- UC20
+Admin -- UC21
+Admin -- UC22
 
-UC07 .> UC10 : includes
-UC05 .> UC06 : includes
 
 @enduml

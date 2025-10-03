@@ -1,0 +1,47 @@
+@startuml Web訪問者システム-カート追加シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor ユーザー as U
+boundary productPage.jsp as B1
+boundary cartComplete.jsp as B2
+boundary productList.jsp as B3
+control カート処理 as C1
+entity productDatabase as E1
+entity cart as E2
+
+' 基本フロー
+U -> B1: 「カートに追加」を選択()
+activate B1
+
+B1 -> C1: requestProductInfo()
+activate C1
+C1 -> E1: checkStockAndGetProductInfo()
+activate E1
+E1 --> C1: stockInfo & productInfo
+deactivate E1
+
+alt Out of Stock
+  C1 -> B1: displayMessage("Product is out of stock")
+  deactivate C1
+  deactivate B1
+  U -> B1: clickOkButton()
+  B1 -> B3: showProductListPage()
+  activate B3
+else In Stock
+  C1 -> E2: addProductToCart()
+  C1 -> E1: updateStock(removeAddedProduct)
+  C1 -> B2: showCartCompletionPage()
+  deactivate C1
+  deactivate B1
+  activate B2
+  U -> B2: clickOkButton()
+  B2 -> B3: showProductListPage()
+  deactivate B2
+  activate B3
+end
+
+
+@enduml
