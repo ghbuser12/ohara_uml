@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+
+actor "ユーザー" as User
+
+boundary "タブメニュー" as TabMenu
+boundary "カート内画面" as CartScreen
+
+control "認証Controller" as AuthController
+control "カートController" as CartController
+control "商品情報Service" as ProductService
+
+entity "カート情報" as CartData
+entity "商品情報" as ProductData
+
+' === 基本フロー ===
+User --> TabMenu : 「カートを見る」選択
+TabMenu --> AuthController : ログイン状態確認
+AuthController --> CartController : ログイン済み通知
+
+CartController --> CartData : カート情報取得
+CartController --> ProductService : 商品情報取得
+ProductService --> ProductData : 商品詳細参照
+CartController --> CartController : 小計・合計金額計算
+CartController --> CartScreen : カート情報＋合計金額表示
+
+' === 代替フロー：カートが空の場合 ===
+CartData --> CartController : カートに商品なし
+CartController --> CartScreen : 「カートに商品がありません」表示
+
+' === 代替フロー：未ログイン時 ===
+AuthController --> User : ログイン画面へ遷移
+User --> AuthController : ログイン情報入力
+AuthController --> CartController : ログイン成功
+
+' === 代替フロー：商品情報取得失敗 ===
+ProductService --> CartController : エラー通知
+CartController --> CartScreen : エラーメッセージ表示／トップページ誘導
+
+@enduml
