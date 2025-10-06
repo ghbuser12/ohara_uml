@@ -1,8 +1,8 @@
 @startuml kouka2_library
 skinparam classAttributeIconSize 0
 
-class 会員 {
-  - 会員番号 : String
+class 利用者 {
+  - 利用者番号 : String
   - 名前 : String
   - 種別 : enum { 学生, 教職員 }
   - メールアドレス : String
