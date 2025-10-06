@@ -1,0 +1,68 @@
+@startuml kouka2_library
+skinparam classAttributeIconSize 0
+
+class 利用者 {
+  - 利用者番号 : String
+  - 名前 : String
+  - 種別 : enum { 学生, 教職員 }
+  - メールアドレス : String
+  - 貸出中冊数 : int
+  + canBorrow() : boolean
+  + maxLoanCount() : int
+}
+
+class 図書タイトル {
+  - タイトルID : String
+  - 書名 : String
+  - 著者 : String
+  - 出版社 : String
+  - 種別 : enum { 図書, 雑誌 }
+  + isLoanableBy(member: 利用者) : boolean
+}
+
+class 図書 {
+  ' 本1冊を表す（所蔵単位）
+  - 管理番号 : String
+  - タイトルID : String
+  - 状態 : enum { 在架, 貸出中, 取置中 }
+  - 所蔵場所 : String
+  + isAvailable() : boolean
+}
+
+class 貸出 {
+  - 貸出ID : String
+  - 利用者番号 : String
+  - 管理番号 : String
+  - 貸出日 : Date
+  - 返却期限日 : Date
+  + isOverdue(today: Date) : boolean
+  + renew() : boolean
+}
+
+class 予約 {
+  - 予約ID : String
+  - 利用者番号 : String
+  - タイトルID : String
+  - 予約日 : Date
+  - 状態 : enum { 有効, 取消, 取置中, 完了 }
+  + cancel() : boolean
+}
+
+class 貸出履歴 {
+  - 履歴ID : String
+  - 管理番号 : String
+  - 利用者番号 : String
+  - 貸出日 : Date
+  - 返却日 : Date
+}
+
+' 関連
+利用者 "1" -- "0..*" 貸出 : has
+利用者 "1" -- "0..*" 予約 : makes
+図書タイトル "1" -- "0..*" 図書 : hasCopies
+図書タイトル "1" -- "0..*" 予約 : reservedBy
+図書 "1" -- "0..*" 貸出 : loanRecords
+図書 "1" -- "0..*" 貸出履歴 : hasHistory
+貸出 "1" -- "0..1" 貸出履歴 : generates
+
+@enduml
