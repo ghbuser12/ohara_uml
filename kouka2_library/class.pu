@@ -31,7 +31,7 @@ class 図書 {
 
 class 貸出 {
   - 貸出ID : String
-  - 会員番号 : String
+  - 利用者番号 : String
   - 管理番号 : String
   - 貸出日 : Date
   - 返却期限日 : Date
@@ -41,7 +41,7 @@ class 貸出 {
 
 class 予約 {
   - 予約ID : String
-  - 会員番号 : String
+  - 利用者番号 : String
   - タイトルID : String
   - 予約日 : Date
   - 状態 : enum { 有効, 取消, 取置中, 完了 }
@@ -51,7 +51,7 @@ class 予約 {
 class 貸出履歴 {
   - 履歴ID : String
   - 管理番号 : String
-  - 会員番号 : String
+  - 利用者番号 : String
   - 貸出日 : Date
   - 返却日 : Date
 }
