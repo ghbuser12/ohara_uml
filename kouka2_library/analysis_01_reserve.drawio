@@ -1,0 +1,73 @@
+<mxfile host="65bd71144e">
+    <diagram id="-zteSz5zAECQy0TDfCdd" name="図書予約ロバストネス図">
+        <mxGraphModel dx="576" dy="466" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="250" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="予約メニューを押下" style="endArrow=classic;html=1;entryX=0.28;entryY=0.804;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="16">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="181.9410032993187" y="190.92293481930358" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="図書予約画面を表示" style="endArrow=classic;html=1;entryX=0.31;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="200" as="sourcePoint"/>
+                        <mxPoint x="257.71655941875383" y="262.86093236458964" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="会員番号・書名を入力" style="endArrow=classic;html=1;entryX=0.017;entryY=0.492;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220.13897843910786" y="297.279044474505" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="予約要求を送信" style="endArrow=classic;html=1;exitX=0.997;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.025;entryY=0.537;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="17" target="19">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="300" as="sourcePoint"/>
+                        <mxPoint x="460.0187412155126" y="297.9996876464081" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="予約情報を登録" style="endArrow=classic;html=1;exitX=0.933;exitY=0.374;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.033;entryY=0.343;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="19" target="20">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="579.9953130492449" y="297.499960942077" as="sourcePoint"/>
+                        <mxPoint x="700" y="284" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="登録結果を返す" style="endArrow=classic;html=1;entryX=0.975;entryY=0.722;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="20" target="19">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="700" y="315" as="sourcePoint"/>
+                        <mxPoint x="579.9822576902288" y="297.97268525984157" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="完了画面を表示" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="480.21620905351006" y="326.9425373965687" as="sourcePoint"/>
+                        <mxPoint x="329.79734968903836" y="440.0654717556365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="予約完了を確認" style="endArrow=classic;html=1;exitX=-0.01;exitY=0.496;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="18" target="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="190" y="420" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="メニュー画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="120" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="図書予約画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="227" y="257" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="予約完了画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="227" y="400" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="図書予約処理" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="250" width="80" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="図書データベース" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="250" width="100" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

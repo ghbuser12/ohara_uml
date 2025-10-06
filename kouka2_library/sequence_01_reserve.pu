@@ -1,0 +1,78 @@
+@startuml 図書予約シーケンス図
+hide footbox
+skinparam boundaryBackgroundColor #D5E8D4
+skinparam controlBackgroundColor  #F8CECC
+skinparam entityBackgroundColor   #DAE8FC
+
+actor 事務職員 as A
+boundary メニュー画面 as B1
+boundary 図書予約画面 as B2
+boundary 予約完了画面 as B3
+control 図書予約システム as C1
+entity データベース as E
+
+' 基本フロー
+A -> B1: 「予約メニュー」を押下
+activate B1
+
+B1 -> C1: 図書予約画面表示要求
+deactivate B1
+activate C1
+C1 -> B2: 図書予約画面を表示
+deactivate C1
+activate B2
+
+A -> B2: 会員番号を入力し「確定」を押下
+B2 -> C1: 会員番号確認要求
+activate C1
+C1 -> E: 会員情報検索
+activate E
+E --> C1: 会員情報(氏名, 種別)
+deactivate E
+
+alt 会員番号が未入力または未登録
+  C1 -> B2: 「会員番号を確認してください」表示
+else 正常
+  C1 -> B2: 会員情報を表示
+end
+
+A -> B2: 書名を入力し「検索」を押下
+B2 -> C1: 書名検索要求
+
+alt 書名が未入力
+  C1 -> B2: 「書名を入力してください」表示
+else 該当する図書が存在しない
+  C1 -> B2: 「該当する図書が見つかりません」表示
+else 正常
+  C1 -> E: 図書検索(書名)
+  activate E
+  E --> C1: 図書一覧(書名, 著者, 出版社)
+  deactivate E
+  C1 -> B2: 図書一覧を表示
+end
+
+A -> B2: 図書一覧から「予約」を押下
+B2 -> C1: 予約登録要求
+
+alt 学生が雑誌を予約
+  C1 -> B2: 「学生は雑誌を予約できません」表示
+else 未貸し出しの本がある
+  C1 -> B2: 「在庫があります」表示
+else 正常予約
+  C1 -> E: 予約情報(ISBN, 会員番号, 予約日時)を登録
+  activate E
+  E --> C1: 登録結果(成功)
+  deactivate E
+  C1 -> B3: 予約完了画面を表示
+  deactivate C1
+  deactivate B2
+  activate B3
+end
+
+' 例外フロー
+alt データ保存に失敗
+  C1 -> E: エラーログを記録
+  C1 -> B2: 「エラーが発生しました。再入力またはリトライしてください」表示
+end
+
+@enduml
