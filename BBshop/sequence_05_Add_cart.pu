@@ -32,7 +32,10 @@ alt Out of Stock
   activate B3
 else In Stock
   C1 -> E2: addProductToCart()
+  activate C1
+  activate E2
   C1 -> E1: updateStock(removeAddedProduct)
+  activate E1
   C1 -> B2: showCartCompletionPage()
   deactivate C1
   deactivate B1
