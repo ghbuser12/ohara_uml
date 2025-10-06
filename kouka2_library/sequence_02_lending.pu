@@ -1,46 +1,84 @@
-@startuml 図書返却シーケンス図
-title 図書返却シーケンス図
+@startuml 図書貸出シーケンス図
+title 図書貸出シーケンス図
 
 actor 事務職員 as Staff
 boundary メニュー画面 as Menu
-boundary 図書返却画面 as ReturnScreen
-control 返却管理 as ReturnCtrl
+boundary 図書貸出画面 as BorrowScreen
+control 貸出管理 as BorrowCtrl
+entity 会員DB as MemberDB
 entity 図書DB as BookDB
-entity 貸出DB as LoanDB
-entity 履歴DB as HistoryDB
-entity 予約DB as ReserveDB
-control メール通知サービス as MailService
 
 == 基本フロー ==
 
-Staff -> Menu : 返却メニューを押下①
-Menu -> ReturnScreen : 図書返却画面を表示②
+Staff -> Menu : 貸出メニューを押下①
+Menu -> BorrowScreen : 図書貸出画面を表示②
 
-Staff -> ReturnScreen : 管理番号を入力・確定③
-ReturnScreen -> ReturnCtrl : 返却処理要求(管理番号)
-ReturnCtrl -> LoanDB : 貸出情報を検索
-LoanDB --> ReturnCtrl : 貸出情報（会員番号・貸出日など）
+Staff -> BorrowScreen : 会員番号を入力・確定③
+BorrowScreen -> BorrowCtrl : 会員番号の確認依頼
+BorrowCtrl -> MemberDB : 会員情報を照会
+MemberDB --> BorrowCtrl : 会員情報（氏名・種別）
+BorrowCtrl --> BorrowScreen : 会員氏名・会員種別を表示④
+note right of BorrowScreen
+未入力 or 未登録の場合 → 代替フロー①
+end note
 
-ReturnCtrl -> BookDB : 図書状態を「在架」に更新
-ReturnCtrl -> HistoryDB : 貸出履歴を登録
-ReturnCtrl -> ReserveDB : 該当図書の予約情報を検索
-alt 予約あり
-  ReserveDB --> ReturnCtrl : 予約者情報
-  ReturnCtrl -> ReserveDB : 状態を「取置中」に更新
-  ReturnCtrl -> MailService : メール通知送信
+Staff -> BorrowScreen : 管理番号を入力・確定⑤
+BorrowScreen -> BorrowCtrl : 図書情報の取得依頼
+BorrowCtrl -> BookDB : 管理番号で書籍を検索
+BookDB --> BorrowCtrl : 書籍情報（書名・状態）
+BorrowCtrl --> BorrowScreen : 貸出一覧に書名を表示⑥
+note right of BorrowScreen
+未入力／未登録 → 代替フロー②  
+上限超過・雑誌制限 → 代替フロー③  
+キャンセル時 → 代替フロー④
+end note
+
+loop 複数図書の場合
+  Staff -> BorrowScreen : 管理番号を入力
+  BorrowScreen -> BorrowCtrl : 図書情報取得
+  BorrowCtrl -> BookDB : 書籍照会
+  BookDB --> BorrowCtrl : 書籍情報
+  BorrowCtrl --> BorrowScreen : 貸出一覧更新
 end
 
-ReturnCtrl --> ReturnScreen : 返却完了メッセージ④
+Staff -> BorrowScreen : 貸出ボタン押下⑦
+BorrowScreen -> BorrowCtrl : 貸出登録要求
+alt 一冊も確定していない場合
+  BorrowCtrl --> BorrowScreen : メッセージ「貸出書籍を入力してください」
+  note right of BorrowScreen
+  → 代替フロー⑤
+  end note
+else 書籍が存在する場合
+  BorrowCtrl -> BookDB : 貸出情報を更新
+  BorrowCtrl -> MemberDB : 貸出履歴を登録
+  BorrowCtrl --> BorrowScreen : 貸出完了画面を表示⑧
+end
 
 == 代替フロー ==
-group 図書が未登録
-  ReturnCtrl --> ReturnScreen : 「管理番号が存在しません」
-  ReturnScreen --> Staff : メッセージ表示 → 基本③へ
+group ① 会員番号が未入力／未登録
+  BorrowCtrl --> BorrowScreen : 「会員番号を確認してください」
+  BorrowScreen --> Staff : メッセージ表示 → 基本③へ
 end
 
-group 図書が貸出中でない
-  ReturnCtrl --> ReturnScreen : 「この図書は貸出中ではありません」
-  ReturnScreen --> Staff : メッセージ表示 → 基本③へ
+group ② 管理番号が未入力／未登録
+  BorrowCtrl --> BorrowScreen : 「管理番号を確認してください」
+  BorrowScreen --> Staff : メッセージ表示 → 基本⑤へ
+end
+
+group ③ 貸出上限超過・雑誌貸出不可
+  BorrowCtrl --> BorrowScreen : 「貸出できない理由」を表示
+  BorrowScreen --> Staff : メッセージ表示 → 基本⑤へ
+end
+
+group ④ 貸出一覧キャンセル
+  Staff -> BorrowScreen : キャンセルボタン押下
+  BorrowScreen -> BorrowCtrl : 削除依頼
+  BorrowCtrl --> BorrowScreen : 一覧から削除完了
+end
+
+group ⑤ 一冊も確定していない
+  BorrowCtrl --> BorrowScreen : 「貸出書籍を入力してください」
+  BorrowScreen --> Staff : メッセージ表示 → 基本⑤へ
 end
 
 @enduml
