@@ -1,0 +1,105 @@
+<mxfile host="65bd71144e">
+    <diagram id="Xe8bkF2K4R_DAqDo6Z-X" name="ページ1">
+        <mxGraphModel dx="680" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="180" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="クレジットカード情報入力画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="100" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=-0.033;entryY=0.504;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="クレジットカード&lt;div&gt;情報を入力&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4">
+                    <mxGeometry x="0.112" y="1" relative="1" as="geometry">
+                        <mxPoint x="1" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="決済システム" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="150" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.987;exitY=0.571;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.496;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="支払い申請" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7">
+                    <mxGeometry x="-0.0637" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="クレジットカード会社" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="240" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.962;exitY=0.621;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="9">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="金額・注文情報および&lt;div&gt;カード情報を送信&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="10">
+                    <mxGeometry x="-0.104" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.017;exitY=0.671;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.676;entryY=1.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="9" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="330" y="320" as="sourcePoint"/>
+                        <mxPoint x="490" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="認証結果を返す" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="12">
+                    <mxGeometry x="0.0112" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0;exitY=0.771;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="2">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="220" y="320" as="sourcePoint"/>
+                        <mxPoint x="380" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="ユーザーにメールで支払い完了通知を出す" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="14">
+                    <mxGeometry x="0.024" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="発送サブシステム" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="280" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.152;exitY=0.854;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.762;entryY=0.213;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="16">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="220" y="320" as="sourcePoint"/>
+                        <mxPoint x="380" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="結果を通知" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="17">
+                    <mxGeometry x="0.0462" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="発送業者" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="350" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=-0.008;entryY=0.371;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="19">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="380" y="330" as="sourcePoint"/>
+                        <mxPoint x="540" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="発送手続きを行う" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="20">
+                    <mxGeometry x="-0.0948" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
