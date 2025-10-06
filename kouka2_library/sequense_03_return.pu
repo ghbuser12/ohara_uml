@@ -1,0 +1,63 @@
+@startuml 図書返却シーケンス図
+title 図書返却シーケンス図
+
+actor 事務職員 as Staff
+boundary メニュー画面 as Menu
+boundary 返却一覧画面 as ReturnScreen
+control 返却管理 as ReturnCtrl
+entity 図書DB as BookDB
+entity 貸出DB as LoanDB
+entity 予約DB as ReserveDB
+control メール通知サービス as MailService
+
+== 基本フロー ==
+
+Staff -> Menu : ① 返却メニューを押下
+Menu -> ReturnScreen : ② 返却一覧画面を表示
+
+loop 図書が複数ある場合
+  Staff -> ReturnScreen : ③ 管理番号を入力
+  ReturnScreen -> ReturnCtrl : 図書情報取得要求
+  ReturnCtrl -> BookDB : 管理番号で図書情報検索
+  BookDB --> ReturnCtrl : 図書情報（貸出状態・返却期限）
+  ReturnCtrl --> ReturnScreen : ④ 図書情報を一覧に追加
+end
+
+Staff -> ReturnScreen : ⑤ 返却ボタン押下
+ReturnScreen -> ReturnCtrl : 返却処理要求
+ReturnCtrl -> LoanDB : 貸出情報更新（返却済）
+ReturnCtrl -> BookDB : 図書状態を「在架」に更新
+ReturnCtrl -> ReserveDB : 該当図書の予約情報検索
+
+alt 予約あり
+  ReserveDB --> ReturnCtrl : 最古の予約者情報
+  ReturnCtrl -> MailService : ⑤-1 メール通知送信
+  ReturnCtrl --> ReturnScreen : ⑤-2 メッセージ「予約されています。予約カウンターへ除けてください」
+  ReturnScreen --> Staff : ⑤-3 青字で一覧に追加
+end
+
+ReturnCtrl --> ReturnScreen : ⑥ 返却完了画面を表示
+
+== 代替フロー ==
+
+group ① 管理番号が登録されていなかった場合
+  ReturnCtrl --> ReturnScreen : メッセージ「管理番号を確認してください」
+  ReturnScreen --> Staff : 一覧に追加しない
+end
+
+group ② 図書の返却期限を過ぎていた場合
+  ReturnCtrl --> ReturnScreen : メッセージ「返却期限を過ぎています。注意してください」
+  ReturnScreen --> Staff : 赤字で一覧に追加
+end
+
+group ③ 図書が貸し出し中でなかった場合
+  ReturnCtrl --> ReturnScreen : メッセージ「貸し出されていません」
+  ReturnScreen --> Staff : 一覧に追加しない
+end
+
+group ④ 返却する図書が一冊も入力されていなかった場合
+  ReturnCtrl --> ReturnScreen : メッセージ「返却する図書が入力されていません」
+  ReturnScreen --> Staff : 基本③へ戻る
+end
+
+@enduml
