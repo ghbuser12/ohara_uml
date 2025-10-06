@@ -1,0 +1,27 @@
+@startuml 図書返却シーケンス図
+
+actor 事務職員
+participant "返却受付画面" as UI
+participant "貸出管理サービス" as LoanService
+participant "貸出" as Loan
+participant "貸出履歴" as History
+participant "予約管理サービス" as ReserveService
+participant "予約" as Reserve
+participant "メール通知サービス" as MailService
+
+事務職員 -> UI : 管理番号を入力して返却処理を開始
+UI -> LoanService : 返却要求(管理番号)
+LoanService -> Loan : 貸出情報を検索
+Loan -> LoanService : 貸出情報を返却
+LoanService -> Loan : 状態を「返却済」に更新
+LoanService -> History : 貸出履歴を生成・保存
+
+LoanService -> ReserveService : 該当図書に予約があるか確認
+ReserveService -> Reserve : 予約情報を検索
+Reserve -> ReserveService : 有効な予約あり
+ReserveService -> Reserve : 状態を「取置中」に更新
+ReserveService -> MailService : 予約者へメール通知
+
+LoanService -> UI : 返却完了メッセージを表示
+
+@enduml
