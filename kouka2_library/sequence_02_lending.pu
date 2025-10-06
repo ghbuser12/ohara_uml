@@ -1,4 +1,4 @@
-@startuml
+@startuml 図書貸出シーケンス図
 title 図書貸出シーケンス図
 
 actor 事務職員 as Staff
