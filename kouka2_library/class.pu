@@ -17,7 +17,7 @@ class 図書タイトル {
   - 著者 : String
   - 出版社 : String
   - 種別 : enum { 図書, 雑誌 }
-  + isLoanableBy(member: 会員) : boolean
+  + isLoanableBy(member: 利用者) : boolean
 }
 
 class 図書 {
@@ -57,8 +57,8 @@ class 貸出履歴 {
 }
 
 ' 関連
-会員 "1" -- "0..*" 貸出 : has
-会員 "1" -- "0..*" 予約 : makes
+利用者 "1" -- "0..*" 貸出 : has
+利用者 "1" -- "0..*" 予約 : makes
 図書タイトル "1" -- "0..*" 図書 : hasCopies
 図書タイトル "1" -- "0..*" 予約 : reservedBy
 図書 "1" -- "0..*" 貸出 : loanRecords
