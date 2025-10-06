@@ -1,8 +1,8 @@
 @startuml kouka2_library
 skinparam classAttributeIconSize 0
 
-class 利用者 {
-  - 利用者番号 : String
+class 会員 {
+  - 会員番号 : String
   - 名前 : String
   - 種別 : enum { 学生, 教職員 }
   - メールアドレス : String
@@ -17,7 +17,7 @@ class 図書タイトル {
   - 著者 : String
   - 出版社 : String
   - 種別 : enum { 図書, 雑誌 }
-  + isLoanableBy(member: 利用者) : boolean
+  + isLoanableBy(member: 会員) : boolean
 }
 
 class 図書 {
@@ -31,7 +31,7 @@ class 図書 {
 
 class 貸出 {
   - 貸出ID : String
-  - 利用者番号 : String
+  - 会員番号 : String
   - 管理番号 : String
   - 貸出日 : Date
   - 返却期限日 : Date
@@ -41,7 +41,7 @@ class 貸出 {
 
 class 予約 {
   - 予約ID : String
-  - 利用者番号 : String
+  - 会員番号 : String
   - タイトルID : String
   - 予約日 : Date
   - 状態 : enum { 有効, 取消, 取置中, 完了 }
@@ -51,14 +51,14 @@ class 予約 {
 class 貸出履歴 {
   - 履歴ID : String
   - 管理番号 : String
-  - 利用者番号 : String
+  - 会員番号 : String
   - 貸出日 : Date
   - 返却日 : Date
 }
 
 ' 関連
-利用者 "1" -- "0..*" 貸出 : has
-利用者 "1" -- "0..*" 予約 : makes
+会員 "1" -- "0..*" 貸出 : has
+会員 "1" -- "0..*" 予約 : makes
 図書タイトル "1" -- "0..*" 図書 : hasCopies
 図書タイトル "1" -- "0..*" 予約 : reservedBy
 図書 "1" -- "0..*" 貸出 : loanRecords
