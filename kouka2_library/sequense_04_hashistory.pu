@@ -1,0 +1,45 @@
+@startuml 貸出履歴閲覧シーケンス図
+title 貸出履歴閲覧シーケンス図
+
+actor 事務職員 as Staff
+boundary メニュー画面 as Menu
+boundary 履歴検索画面 as HistorySearchScreen
+control 履歴管理 as HistoryCtrl
+database 図書DB as BookDB
+database 履歴DB as HistoryDB
+
+== 基本フロー ==
+
+Staff -> Menu : ① 貸出履歴メニューを押下
+Menu -> HistorySearchScreen : ② 履歴検索画面を表示
+
+Staff -> HistorySearchScreen : ③ 書名を入力し検索ボタン押下
+HistorySearchScreen -> HistoryCtrl : 書名検索要求
+HistoryCtrl -> BookDB : ④ 書名部分一致検索
+BookDB --> HistoryCtrl : 該当図書一覧
+HistoryCtrl --> HistorySearchScreen : 図書一覧表示
+
+Staff -> HistorySearchScreen : ⑤ 管理番号を選択
+HistorySearchScreen -> HistoryCtrl : 履歴検索要求(管理番号)
+HistoryCtrl -> HistoryDB : ⑥ 貸出履歴検索
+HistoryDB --> HistoryCtrl : 履歴一覧
+HistoryCtrl --> HistorySearchScreen : 履歴一覧画面表示
+
+== 代替フロー ==
+
+group ① 書名が未入力の場合
+  HistoryCtrl --> HistorySearchScreen : メッセージ「書名を入力してください」①-1
+  HistorySearchScreen --> Staff : 基本③へ①-2
+end
+
+group ② 該当する図書がない場合
+  HistoryCtrl --> HistorySearchScreen : メッセージ「該当する図書がありません」②-1
+  HistorySearchScreen --> Staff : 基本③へ②-2
+end
+
+group ③ 貸出履歴が存在しない場合
+  HistoryCtrl --> HistorySearchScreen : メッセージ「貸出履歴がありません」③-1
+  HistorySearchScreen --> Staff : 基本③へ③-2
+end
+
+@enduml

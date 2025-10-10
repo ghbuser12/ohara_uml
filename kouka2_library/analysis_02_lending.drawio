@@ -1,0 +1,312 @@
+<mxfile host="65bd71144e">
+    <diagram id="4wmO6bFBi_Bj_KoEqQXv" name="ページ1">
+        <mxGraphModel dx="1969" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="91" value="B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="440" y="820" width="370" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="html=1;whiteSpace=wrap;fillColor=none;container=0;" vertex="1" parent="1">
+                    <mxGeometry y="880" width="420" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="570" width="420" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="160" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="システム&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: rgb(63, 63, 63);&quot;&gt;メニュー&lt;/span&gt;&lt;/div&gt;" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="90" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.007;entryY=0.496;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="貸出メニュー&lt;div&gt;&lt;div&gt;ボタンを押す&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4">
+                    <mxGeometry x="-0.1424" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="&lt;div&gt;貸出処理&lt;/div&gt;" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="120" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1" source="3" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="図書貸出画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="200" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.029;exitY=0.488;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.847;entryY=0.121;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="会員氏名・会員種別を表示" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9">
+                    <mxGeometry x="-0.0487" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=-0.013;entryY=0.279;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="60" y="170" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="会員番号を入力して&lt;div&gt;確定を押す&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="10">
+                    <mxGeometry x="-0.0087" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="データベース" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="210" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0;exitY=0.638;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.752;entryY=0.913;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="情報取得" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="14">
+                    <mxGeometry x="0.0394" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=open;endFill=1;endSize=12;html=1;entryX=0.124;entryY=0.879;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.007;exitY=0.563;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="8" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="会員番号・管理番号&lt;div&gt;を照合&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="17">
+                    <mxGeometry x="-0.0437" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="貸出一覧画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="300" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.02;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="管理番号を入力し&lt;div&gt;確定を押す&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="20">
+                    <mxGeometry x="-0.0318" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.286;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.953;entryY=0.213;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="19">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="410" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="貸出一覧に書名を表示" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="23">
+                    <mxGeometry x="-0.1391" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="19">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="100" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="貸出ボタンを押す" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="28">
+                    <mxGeometry x="0.083" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=1;exitY=0.625;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.414;entryY=0.996;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="19" target="6">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="510" y="330" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="450" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="貸出情報保存" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="30">
+                    <mxGeometry x="-0.0073" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=1.052;exitY=0.654;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6" target="12">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="250" y="240" as="sourcePoint"/>
+                        <mxPoint x="410" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="保存" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="32">
+                    <mxGeometry x="-0.2146" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="貸出完了画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="400" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.614;exitY=1.021;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.03;entryY=0.438;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6" target="35">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="210" y="330" as="sourcePoint"/>
+                        <mxPoint x="370" y="330" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="490" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="結果を表示" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="36">
+                    <mxGeometry x="0.2033" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="610" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="図書貸出画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="610" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="①会員番号が未入力または未登録の場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="570" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=-0.024;exitY=0.534;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="39" target="38">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="80" y="460" as="sourcePoint"/>
+                        <mxPoint x="240" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="「会員番号を&lt;div&gt;確認&lt;span style=&quot;color: rgb(63, 63, 63); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;してください」&lt;/span&gt;&lt;div&gt;&lt;div&gt;と表示&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.0569" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="" style="html=1;whiteSpace=wrap;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-2" y="730" width="422" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="図書貸出画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="760" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="770" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="②管理番号が未入力、または未登録の場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="740" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=-0.006;exitY=0.469;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="49" target="50">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="80" y="630" as="sourcePoint"/>
+                        <mxPoint x="240" y="630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="「管理番号を&lt;div&gt;確認&lt;span style=&quot;color: rgb(63, 63, 63); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;してください」&lt;/span&gt;&lt;div&gt;&lt;div&gt;と表示&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="52">
+                    <mxGeometry x="-0.0817" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="図書貸出画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="915" width="100" height="80" as="geometry">
+                        <mxRectangle x="252" y="950" width="110" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="32" y="915" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="③貸し出し上限を超える、または、学生に対する雑誌の貸し出しの場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;container=0;" vertex="1" parent="1">
+                    <mxGeometry y="885" width="410" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=-0.006;exitY=0.469;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="56" target="57">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="82" y="775" as="sourcePoint"/>
+                        <mxPoint x="242" y="775" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="貸し出しができない理由を&lt;div&gt;メッセージ表示する。&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="59">
+                    <mxGeometry x="-0.0817" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="" style="html=1;whiteSpace=wrap;fillColor=none;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="570" width="370" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="貸出一覧画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="610" width="100" height="80" as="geometry">
+                        <mxRectangle x="252" y="950" width="110" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="76" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="610" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="④貸出一覧の図書をキャンセルする場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="580" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.017;entryY=0.52;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="76" target="75">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="530" y="710" as="sourcePoint"/>
+                        <mxPoint x="690" y="710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="81" value="図書キャンセル&lt;div&gt;ボタン&lt;div&gt;を押す&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="80">
+                    <mxGeometry x="-0.0999" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="83" value="貸出処理" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="720" width="70" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.258;exitY=0.822;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.774;entryY=0.228;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="75" target="83">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="580" y="720" as="sourcePoint"/>
+                        <mxPoint x="740" y="720" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="88" value="データベース" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="710" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="" style="endArrow=open;endFill=1;endSize=12;html=1;exitX=0.952;exitY=0.53;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.062;entryY=0.645;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="83" target="88">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="580" y="720" as="sourcePoint"/>
+                        <mxPoint x="740" y="720" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="90" value="貸出一覧から&lt;div&gt;該当の図書を&lt;/div&gt;&lt;div&gt;削除&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="89">
+                    <mxGeometry x="-0.0627" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="92" value="⑤一冊も確定していない場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="820" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="事務職員" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="860" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="図書貸出画面" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="860" width="100" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1" source="93" target="94">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="540" y="810" as="sourcePoint"/>
+                        <mxPoint x="700" y="810" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="96" value="「貸し出す書籍を&lt;div&gt;入力してください」&lt;div&gt;と表示&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="95">
+                    <mxGeometry x="-0.1038" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
